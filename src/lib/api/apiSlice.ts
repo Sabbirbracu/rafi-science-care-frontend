@@ -1,12 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import type { RootState } from "../store";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api",
-  credentials: "include",
-  prepareHeaders: (headers) => {
-    // You can attach tokens here if needed
-    // const token = Cookies.get("token");
-    // if (token) headers.set("authorization", `Bearer ${token}`);
+  baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000/api/v1",
+  credentials: "include", // sends httpOnly cookies (refreshToken)
+  prepareHeaders: (headers, { getState }) => {
+    const token = (getState() as RootState).auth.accessToken;
+    if (token) {
+      headers.set("authorization", `Bearer ${token}`);
+    }
     return headers;
   },
 });

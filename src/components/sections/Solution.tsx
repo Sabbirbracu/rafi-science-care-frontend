@@ -69,7 +69,7 @@ export default function Solution() {
 
           <h2 className="mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-[44px] md:leading-[1.15]">
             Cadet HSC Biology{" "}
-            <span className="text-[#dc2626]">Crash Course 2026</span>
+            <span className="bg-gradient-to-r from-[#fca5a5] to-[#dc2626] bg-clip-text text-transparent">Crash Course 2026</span>
           </h2>
 
           <p className="mt-6 text-base leading-relaxed text-white/65 sm:text-lg">

@@ -37,7 +37,7 @@ function useCountdown(target: Date) {
   return { d: pad(d), h: pad(h), m: pad(m), s: pad(s) };
 }
 
-export default function Hero() {
+export default function Hero({ onEnroll }: { onEnroll?: () => void }) {
   const { d, h, m, s } = useCountdown(TARGET_DATE);
 
   return (
@@ -132,8 +132,9 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
-                href="#pricing"
+              <button
+                type="button"
+                onClick={onEnroll}
                 className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#dc2626] px-7 py-4 font-sans text-base font-bold text-white shadow-2xl shadow-[#dc2626]/40 transition hover:bg-[#b91c1c] hover:shadow-[#dc2626]/60 sm:text-lg"
               >
                 এখনই Enroll করো — ৳3,500
@@ -142,7 +143,7 @@ export default function Hero() {
                   strokeWidth={2.5}
                   className="transition-transform group-hover:translate-x-1"
                 />
-              </Link>
+              </button>
               <Link
                 href="#sample"
                 className="group inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-5 py-3 font-sans text-sm font-semibold text-white/80 transition hover:border-white/50 hover:text-white"
@@ -319,7 +320,7 @@ function CountdownCard({
             </span>
             <p className="font-bengali text-[13px] leading-relaxed text-gray-800">
               <span className="font-bold">Bogura-র Vacation</span> শেষ হওয়ার
-              আগেই শুরু করো। June 4-এর পর এই সুযোগ নাও-ও নাও থাকতে পারে।
+              আগেই শুরু করো। June 4-এর পর এই সুযোগ নাও-ও থাকতে পারে।
             </p>
           </div>
 

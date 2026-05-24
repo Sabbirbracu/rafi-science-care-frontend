@@ -6,7 +6,6 @@ import {
   BarChart3,
   ArrowRight,
 } from "lucide-react";
-import Link from "next/link";
 
 const PILLARS = [
   {
@@ -35,7 +34,7 @@ const PILLARS = [
   },
 ];
 
-export default function Solution() {
+export default function Solution({ onEnroll }: { onEnroll?: () => void }) {
   return (
     <section
       id="solution"
@@ -117,17 +116,18 @@ export default function Solution() {
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <Link
-            href="#pricing"
+          <button
+            type="button"
+            onClick={onEnroll}
             className="group inline-flex items-center gap-2 rounded-full bg-[#dc2626] px-7 py-3.5 font-sans text-sm font-bold text-white shadow-lg shadow-[#dc2626]/30 transition hover:bg-[#b91c1c] hover:shadow-xl hover:shadow-[#dc2626]/40"
           >
-            Course Details দেখো
+            এখনই Enroll করো
             <ArrowRight
               size={16}
               strokeWidth={2.5}
               className="transition-transform group-hover:translate-x-1"
             />
-          </Link>
+          </button>
         </div>
       </div>
     </section>

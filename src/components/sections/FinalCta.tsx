@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { ArrowRight, ShieldCheck, Zap } from "lucide-react";
 
-export default function FinalCta() {
+export default function FinalCta({ onEnroll }: { onEnroll?: () => void }) {
   return (
     <section className="relative isolate overflow-hidden bg-[#0d2240] py-20 text-white sm:py-24 lg:py-28">
       {/* Background — matching hero */}
@@ -30,7 +29,9 @@ export default function FinalCta() {
 
         <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-[1.1]">
           আর দেরি করো না —{" "}
-          <span className="bg-gradient-to-r from-[#fca5a5] to-[#dc2626] bg-clip-text text-transparent">এখনই শুরু করো।</span>
+          <span className="bg-gradient-to-r from-[#fca5a5] to-[#dc2626] bg-clip-text text-transparent">
+            এখনই শুরু করো।
+          </span>
         </h2>
 
         <p className="mt-6 text-base text-white/70 sm:text-lg">
@@ -39,8 +40,9 @@ export default function FinalCta() {
         </p>
 
         <div className="mt-10">
-          <Link
-            href="/enroll"
+          <button
+            type="button"
+            onClick={onEnroll}
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#dc2626] px-8 py-4 font-sans text-base font-bold text-white shadow-lg shadow-[#dc2626]/30 transition hover:bg-[#b91c1c] hover:shadow-xl hover:shadow-[#dc2626]/40 sm:text-lg"
           >
             <span>৳3,500 — এখনই Enroll করো</span>
@@ -49,7 +51,7 @@ export default function FinalCta() {
               strokeWidth={2.5}
               className="transition-transform group-hover:translate-x-1"
             />
-          </Link>
+          </button>
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-x-6 gap-y-2 text-sm text-white/60 sm:flex-row">

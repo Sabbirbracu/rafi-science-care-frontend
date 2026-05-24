@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Check, ArrowRight, AlertOctagon } from "lucide-react";
 
 const INCLUSIONS = [
@@ -9,7 +8,7 @@ const INCLUSIONS = [
   "Dedicated Online Platform Access",
 ];
 
-export default function Pricing() {
+export default function Pricing({ onEnroll }: { onEnroll?: () => void }) {
   return (
     <section
       id="pricing"
@@ -71,8 +70,9 @@ export default function Pricing() {
                     </p>
                   </div>
 
-                  <Link
-                    href="/enroll"
+                  <button
+                    type="button"
+                    onClick={onEnroll}
                     className="group mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#dc2626] px-6 py-4 font-sans text-base font-bold text-white shadow-lg shadow-[#dc2626]/25 transition hover:bg-[#b91c1c] hover:shadow-xl"
                   >
                     এখনই Enroll করো
@@ -81,7 +81,7 @@ export default function Pricing() {
                       strokeWidth={2.5}
                       className="transition-transform group-hover:translate-x-1"
                     />
-                  </Link>
+                  </button>
 
                   <p className="mt-3 text-center font-sans text-xs text-gray-500">
                     Secure payment via SSLCommerz

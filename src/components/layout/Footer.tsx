@@ -32,7 +32,7 @@ function YoutubeIcon({ size = 18 }: { size?: number }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0d2240] text-white">
+    <footer className="bg-gradient-to-b from-[#050d1c] to-[#0d2240] text-white">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand */}
@@ -98,7 +98,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li className="flex items-center gap-2.5">
                 <Phone size={15} className="text-[#fca5a5]" />
-                <span className="font-sans">+880 1XXX XXXXXX</span>
+                <span className="font-sans">+880 1798416968</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail size={15} className="text-[#fca5a5]" />
@@ -115,6 +115,17 @@ export default function Footer() {
           </p>
           <p className="font-sans text-xs text-white/50">
             Secure payments by SSLCommerz
+          </p>
+          <p className="font-sans text-xs text-white/50">
+            Developed by{" "}
+            <Link
+              href="https://sabbir.qullia.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 underline decoration-white/30 underline-offset-2 transition hover:text-white"
+            >
+              Sabbir Ahmad
+            </Link>
           </p>
         </div>
       </div>

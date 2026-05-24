@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Radio,
   Video,
@@ -6,8 +8,11 @@ import {
   Calendar,
   Clock,
   ArrowRight,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { useAppSelector } from "@/lib/hooks";
+import { useGetMeQuery } from "@/lib/features/auth/authApi";
 
 const QUICK_STATS = [
   {
@@ -62,6 +67,13 @@ const UPCOMING_CLASSES = [
 ];
 
 export default function DashboardOverview() {
+  const authUser = useAppSelector((state) => state.auth.user);
+  const { data: meData } = useGetMeQuery();
+
+  // Prefer fresh data from /me API, fallback to Redux state
+  const user = meData?.data || authUser;
+  const firstName = user?.name?.split(" ")[0] || "Student";
+
   return (
     <div className="space-y-6">
       {/* Welcome banner */}
@@ -74,21 +86,50 @@ export default function DashboardOverview() {
           aria-hidden
           className="absolute -bottom-8 -left-8 h-36 w-36 rounded-full bg-[#1e5688]/30 blur-[60px]"
         />
-        <div className="relative">
-          <h1 className="font-sans text-2xl font-bold sm:text-3xl">
-            স্বাগতম! 👋
-          </h1>
-          <p className="mt-2 max-w-lg text-sm text-white/70 sm:text-base">
-            তোমার Cadet HSC Biology Crash Course চলছে। আজকের class-এ join করো
-            এবং নিয়মিত practice চালিয়ে যাও।
-          </p>
-          <Link
-            href="/dashboard/live"
-            className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#dc2626] px-5 py-2.5 font-sans text-sm font-semibold text-white shadow-md shadow-[#dc2626]/25 transition hover:bg-[#b91c1c]"
-          >
-            Next Live Class
-            <ArrowRight size={16} strokeWidth={2.5} />
-          </Link>
+        <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          {/* Left: greeting + CTA */}
+          <div>
+            <h1 className="font-sans text-2xl font-bold sm:text-3xl">
+              Welcome back, {firstName}! 👋
+            </h1>
+            <p className="mt-2 max-w-lg text-sm text-white/70 sm:text-base">
+              Your Cadet HSC Biology Crash Course is in progress. Stay
+              consistent — your next class is coming up soon.
+            </p>
+            <Link
+              href="/dashboard/live"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#dc2626] px-5 py-2.5 font-sans text-sm font-semibold text-white shadow-md shadow-[#dc2626]/25 transition hover:bg-[#b91c1c]"
+            >
+              Join Next Class
+              <ArrowRight size={16} strokeWidth={2.5} />
+            </Link>
+          </div>
+
+          {/* Right: quick info card */}
+          <div className="shrink-0 rounded-xl border border-white/10 bg-white/[0.06] p-4 backdrop-blur-sm sm:min-w-[200px]">
+            <div className="flex items-center gap-2">
+              <Zap size={14} className="text-[#fbbf24]" />
+              <p className="font-sans text-[10px] font-bold uppercase tracking-wider text-white/60">
+                Next Class
+              </p>
+            </div>
+            <p className="mt-2 font-sans text-sm font-bold text-white">
+              Cell Division — Mitosis
+            </p>
+            <div className="mt-1.5 flex items-center gap-2 text-xs text-white/50">
+              <Calendar size={11} />
+              <span>June 2, 2026</span>
+              <span>·</span>
+              <Clock size={11} />
+              <span>8:00 PM</span>
+            </div>
+            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
+              <div className="h-full w-[25%] rounded-full bg-[#dc2626]" />
+            </div>
+            <p className="mt-1 font-sans text-[10px] text-white/40">
+              3 of 12 classes completed
+            </p>
+          </div>
         </div>
       </div>
 

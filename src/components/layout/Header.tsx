@@ -41,7 +41,7 @@ export default function Header() {
         <div className="hidden items-center gap-3 md:flex">
           <Link
             href="/login"
-            className="font-sans text-sm font-semibold text-white/90 transition hover:text-[#dc2626]"
+            className="rounded-lg border border-white/30 px-4 py-2.5 font-sans text-sm font-semibold text-white transition hover:border-white/60 hover:text-white"
           >
             Login
           </Link>

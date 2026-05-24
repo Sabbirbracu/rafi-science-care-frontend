@@ -33,15 +33,15 @@ export default function Faq() {
     <section id="faq" className="bg-white py-20 sm:py-24 lg:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#1a6b3c]/20 bg-[#ecf7f0] px-3.5 py-1.5">
-            <HelpCircle size={14} className="text-[#1a6b3c]" />
-            <span className="font-sans text-xs font-semibold uppercase tracking-wide text-[#114829]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#1e5688]/20 bg-[#eff6fc] px-3.5 py-1.5">
+            <HelpCircle size={14} className="text-[#1e5688]" />
+            <span className="font-sans text-xs font-semibold uppercase tracking-wide text-[#15355a]">
               FAQ
             </span>
           </div>
           <h2 className="mt-5 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-5xl">
             যেসব প্রশ্ন মাথায়{" "}
-            <span className="text-[#1a6b3c]">আসতে পারে</span>
+            <span className="text-[#1e5688]">আসতে পারে</span>
           </h2>
         </div>
 
@@ -53,7 +53,7 @@ export default function Faq() {
                 key={i}
                 className={`overflow-hidden rounded-2xl border transition ${
                   isOpen
-                    ? "border-[#1a6b3c]/30 bg-[#ecf7f0]/40 shadow-md"
+                    ? "border-[#1e5688]/30 bg-[#eff6fc]/40 shadow-md"
                     : "border-gray-200 bg-white hover:border-gray-300"
                 }`}
               >
@@ -68,7 +68,7 @@ export default function Faq() {
                   </span>
                   <ChevronDown
                     size={20}
-                    className={`shrink-0 text-[#1a6b3c] transition-transform duration-200 ${
+                    className={`shrink-0 text-[#1e5688] transition-transform duration-200 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />

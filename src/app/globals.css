@@ -12,26 +12,27 @@
   --font-sans: var(--font-inter);
   --font-bengali: var(--font-bengali);
 
-  /* Brand palette */
-  --color-brand-50: #ecf7f0;
-  --color-brand-100: #d1ecdc;
-  --color-brand-200: #a3d9b9;
-  --color-brand-300: #6fc294;
-  --color-brand-400: #3fa56f;
-  --color-brand-500: #1a6b3c;
-  --color-brand-600: #155a32;
-  --color-brand-700: #114829;
-  --color-brand-800: #0d3a21;
-  --color-brand-900: #082817;
+  /* Brand palette — Academic Blue (matches the Rafi's Science Care logo) */
+  --color-brand-50: #eff6fc;
+  --color-brand-100: #d8e9f6;
+  --color-brand-200: #b3d4ec;
+  --color-brand-300: #82b8de;
+  --color-brand-400: #4f95ca;
+  --color-brand-500: #2c6fa8;
+  --color-brand-600: #1e5688;
+  --color-brand-700: #1a4570;
+  --color-brand-800: #15355a;
+  --color-brand-900: #0d2240;
 
-  --color-accent-50: #fff7ed;
-  --color-accent-100: #ffedd5;
-  --color-accent-200: #fed7aa;
-  --color-accent-300: #fdba74;
-  --color-accent-400: #fb923c;
-  --color-accent-500: #f97316;
-  --color-accent-600: #ea580c;
-  --color-accent-700: #c2410c;
+  /* Accent palette — Brand Red (matches the logo's red) for CTAs and urgency */
+  --color-accent-50: #fef2f2;
+  --color-accent-100: #fee2e2;
+  --color-accent-200: #fecaca;
+  --color-accent-300: #fca5a5;
+  --color-accent-400: #f87171;
+  --color-accent-500: #dc2626;
+  --color-accent-600: #b91c1c;
+  --color-accent-700: #991b1b;
 }
 
 body {
@@ -41,12 +42,10 @@ body {
   font-feature-settings: "ss01", "cv11";
 }
 
-/* Smooth scrolling for anchor nav */
 html {
   scroll-behavior: smooth;
 }
 
-/* Subtle scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

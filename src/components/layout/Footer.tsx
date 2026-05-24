@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { GraduationCap, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import Logo from "@/components/brand/Logo";
 
 function FacebookIcon({ size = 18 }: { size?: number }) {
   return (
@@ -31,24 +32,12 @@ function YoutubeIcon({ size = 18 }: { size?: number }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#082817] text-white">
+    <footer className="bg-[#0d2240] text-white">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-[#fdba74]">
-                <GraduationCap size={22} strokeWidth={2.25} />
-              </div>
-              <div className="leading-tight">
-                <p className="font-sans text-base font-bold">
-                  Rafi&apos;s Science Care
-                </p>
-                <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#fdba74]">
-                  Cadet HSC Batch 2026
-                </p>
-              </div>
-            </div>
+            <Logo />
             <p className="mt-5 max-w-md text-sm leading-relaxed text-white/70">
               Dr. Rafi-র নিজস্ব Education Platform — যেখানে Science-কে ভয় নয়,
               ভালোবাসতে শেখানো হয়।
@@ -58,14 +47,14 @@ export default function Footer() {
               <Link
                 href="#"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/80 transition hover:bg-[#f97316] hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/80 transition hover:bg-[#dc2626] hover:text-white"
               >
                 <FacebookIcon size={18} />
               </Link>
               <Link
                 href="#"
                 aria-label="YouTube"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/80 transition hover:bg-[#f97316] hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/80 transition hover:bg-[#dc2626] hover:text-white"
               >
                 <YoutubeIcon size={18} />
               </Link>
@@ -74,7 +63,7 @@ export default function Footer() {
 
           {/* Links */}
           <div className="lg:col-span-3">
-            <h4 className="font-sans text-sm font-bold uppercase tracking-wider text-[#fdba74]">
+            <h4 className="font-sans text-sm font-bold uppercase tracking-wider text-[#fca5a5]">
               Course
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm text-white/70">
@@ -103,16 +92,16 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-4">
-            <h4 className="font-sans text-sm font-bold uppercase tracking-wider text-[#fdba74]">
+            <h4 className="font-sans text-sm font-bold uppercase tracking-wider text-[#fca5a5]">
               Contact
             </h4>
             <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li className="flex items-center gap-2.5">
-                <Phone size={15} className="text-[#fdba74]" />
+                <Phone size={15} className="text-[#fca5a5]" />
                 <span className="font-sans">+880 1XXX XXXXXX</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail size={15} className="text-[#fdba74]" />
+                <Mail size={15} className="text-[#fca5a5]" />
                 <span className="font-sans">support@rafisciencecare.com</span>
               </li>
             </ul>
